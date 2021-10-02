@@ -1,0 +1,223 @@
+$primaryColor: #ffffff;
+$secondColor: rgb(168, 168, 168);
+
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    background-color: #000;
+    font-size: 21px;
+    color: white;
+}
+
+input {
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #111;
+    text-align: center;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+header {
+    display: block;
+    height: 80px;
+    h2 {
+        text-align: center;
+    }
+    
+    .text {
+        font-size: 2.5em;
+        color: #fff;
+        animation: glitch 0.5s linear infinite;
+    }
+    
+    // // @keyframes glitch {
+    // //     0%, 100% {
+    // //         text-shadow: -1.5px -1.5px 0 #0ff, 1.5px 1.5px 0 #f00;
+    // //     }
+    // //     25% {
+    // //         text-shadow: 1.5px 1.5px 0 #0ff, -1.5px -1.5px 0 #f00;
+    // //     }
+    // //     50% {
+    // //         text-shadow: 1.5px -1.5px 0 #0ff, -1.5px 1.5px 0 #f00;
+    // //     }
+    // //     75% {
+    // //         text-shadow: 1.5px 1.5px 0 #0ff, 1.5px -1.5px 0 #f00;
+    // //     }
+    // }
+}
+
+.preloader {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+   
+}
+
+.btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 50%;
+    margin: 0 auto;
+    button {
+        width: 160px;
+        height: 40px;
+        border-radius: 5px;
+        margin: 40px 20px;
+        font-weight: 800;
+        box-shadow: 0 5px 10px rgba($color: $primaryColor, $alpha: 0.8);
+    }
+}
+
+.card-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px 20 px 10px;
+    .card {
+        max-width: 320px;
+        height: 240px;
+        height: 215px;
+        background: $primaryColor;
+        margin: 30px 10px;
+        padding: 20px 15px;
+        display: flex;
+        border-radius: 8px;
+        flex-direction: column;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+    .card:hover {
+        height: 360px;
+    }
+    .card .img-box {
+        position: relative;
+        background: $secondColor;
+        top: -60px;
+        left: 20px;
+        min-width: initial;
+        width: 260px;
+        height: 260px;
+        border-radius: 8px;
+        z-index: 1;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card .img-box img {
+        max-width: 60%;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .card .img-content {
+        position: relative;
+        margin-top: -140px;
+        padding: 10px 15px;
+        text-align: center;
+        color: #111;
+        visibility: hidden;
+        opacity: 0; 
+        transition: 0.3s ease-in-out;
+        transition-delay: 0s;
+    }
+    .card:hover .img-content {
+        visibility: visible;
+        opacity: 1;
+        margin-top: -40px;
+        transition-delay: 0.3s;
+    }
+}
+
+.app {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;       
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    margin: 10px;
+    background-color: #333;
+
+    .menu-tabs {
+        margin: 10px;
+        width: 33%;
+        margin-left: 30px;
+
+        &:hover {
+            background-color: rgb(0, 0, 0);
+        }
+    }
+}
+
+.tabcontent {
+    width: 100%;
+    min-height: 420px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #150747;
+
+    
+}
+
+.inputData {
+    width: 30%;
+    text-align: center;
+}
+
+.outputData {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.result-table {       
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.result-blocks {
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    div {
+        display: block;
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
