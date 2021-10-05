@@ -221,3 +221,40 @@ footer {
     }
 }
 
+table{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+td{
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+th{
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    background-color: #000000;
+    border-radius: 5px; 
+    color: #fff;
+}
+
+.active{
+    background-color: rgb(192, 0, 0);
+}
+
+.graphik{
+    display: flex;
+    flex-direction: row;
+    button {
+        display: inline-block;
+        
+    }
+
+}
+

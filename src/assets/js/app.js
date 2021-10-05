@@ -2,6 +2,8 @@ import tabs from './modules/tabs';
 import calcDayBonus from './modules/calcDayBonus';
 import getMaxDay from './modules/getMaxDay';
 import calcTaxDeduction from './modules/calcTaxDeduction';
+import createCalendar from './modules/createCalendar';
+import createMonthGraphik from './modules/createMonthGraphik';
 
 let appData = {
     factDay: 0,
@@ -13,9 +15,12 @@ let appData = {
 window.addEventListener('DOMContentLoaded', () => {
     tabs('.menu','.menu-tabs', '.tabcontent', 'show');
 })
+
+const preloader =  document.querySelector('.preloader');
 const app = document.querySelector('.app');
 const priem = document.querySelector('.btn-priem');
 const razm = document.querySelector('.btn-razm');
+
 
 priem.addEventListener('click', () => {
     appData.monthWage = 33500;
@@ -45,6 +50,8 @@ let wageValue = document.querySelector('.wage-value'),
     allWage = document.querySelector('.allWage-value'),
     factWage = document.querySelector('.factWages-value');
 
+//Application work
+
 start.addEventListener('click', function(){
     appData.maxDay = getMaxDay('maxDay-item',0, 2);
     appData.factDay = factDay.value;
@@ -67,3 +74,32 @@ start.addEventListener('click', function(){
     factWage.textContent = calcTaxDeduction(a + b);
     
 })
+
+//Calendar
+
+let dateYear = new Date().getFullYear();
+let dateMonth = new Date().getMonth();
+createCalendar('calendar', dateYear, dateMonth);
+
+//Graphik
+
+createMonthGraphik(dateMonth);
+
+const prevCreateGraphik =  document.querySelector('.prev-btn'),
+      nowCreateGraphik =  document.querySelector('.now-btn'),
+      nextCreateGraphik =  document.querySelector('.next-btn');
+
+prevCreateGraphik.addEventListener('click', () => {
+    createCalendar('calendar', dateYear, dateMonth - 1);
+    createMonthGraphik(dateMonth - 1);
+ });
+
+nowCreateGraphik.addEventListener('click', () => {
+    createCalendar('calendar', dateYear, dateMonth);
+    createMonthGraphik(dateMonth);
+ });
+
+nextCreateGraphik.addEventListener('click', () => {
+    createCalendar('calendar', dateYear, dateMonth + 1);
+    createMonthGraphik(dateMonth + 1);
+ });
