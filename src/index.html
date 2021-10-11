@@ -40,7 +40,7 @@
     <div class="menu">
         <div class="menu-tabs">Расчет ЗП</div>
         <div class="menu-tabs">График</div>
-        <div class="menu-tabs">Дополнительно</div>
+        <div class="menu-tabs">Live-квиток</div>
     </div>   
         
     <div class="tabcontent">
@@ -98,11 +98,18 @@
         <div id="calendar"></div>
     </div>
     <div class="tabcontent">
+        <div class="percent">
+            <h4>Введите процент</h4>
+            <ul id="list"></ul>
+            <form>
+                <input type="number" id="listitem" autocomplete="off" placeholder="0" />
+                <button id="add">Add</button>
+            </form>            
+        </div>
         <div>
-            <p>В разработке...</p>
+            <h4>Средний процент</h4>
+            <div id="out"></div>
         </div>
     </div>
 </div>
 
-
-<script src="assets/js/app.js"></script>

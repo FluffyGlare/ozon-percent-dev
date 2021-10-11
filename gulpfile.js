@@ -60,7 +60,7 @@ function serve() {
     });
 }
 
-function html(cb) {
+function html(_cb) {
     panini.refresh();
     return src(path.src.html, {base: srcPath})
         .pipe(plumber())
@@ -74,10 +74,9 @@ function html(cb) {
         .pipe(dest(path.build.html))
         .pipe(browserSync.reload({stream: true}));
 
-    cb();
 }
 
-function css(cb) {
+function css(_cb) {
     return src(path.src.css, {base: srcPath + "assets/scss/"})
         .pipe(plumber({
             errorHandler : function(err) {
@@ -110,10 +109,9 @@ function css(cb) {
         .pipe(dest(path.build.css))
         .pipe(browserSync.reload({stream: true}));
 
-    cb();
 }
 
-function cssWatch(cb) {
+function cssWatch(_cb) {
     return src(path.src.css, {base: srcPath + "assets/scss/"})
         .pipe(plumber({
             errorHandler : function(err) {
@@ -134,10 +132,9 @@ function cssWatch(cb) {
         .pipe(dest(path.build.css))
         .pipe(browserSync.reload({stream: true}));
 
-    cb();
 }
 
-function js(cb) {
+function js(_cb) {
     return src(path.src.js, {base: srcPath + 'assets/js/'})
         .pipe(plumber({
             errorHandler : function(err) {
@@ -157,10 +154,9 @@ function js(cb) {
         .pipe(dest(path.build.js))
         .pipe(browserSync.reload({stream: true}));
 
-    cb();
 }
 
-function jsWatch(cb) {
+function jsWatch(_cb) {
     return src(path.src.js, {base: srcPath + 'assets/js/'})
         .pipe(plumber({
             errorHandler : function(err) {
@@ -180,10 +176,9 @@ function jsWatch(cb) {
         .pipe(dest(path.build.js))
         .pipe(browserSync.reload({stream: true}));
 
-    cb();
 }
 
-function images(cb) {
+function images(_cb) {
     return src(path.src.images)
         .pipe(image({
             pngquant: true,
@@ -198,21 +193,18 @@ function images(cb) {
         .pipe(dest(path.build.images))
         .pipe(browserSync.reload({stream: true}));
 
-    cb();
 }
 
-function fonts(cb) {
+function fonts(_cb) {
     return src(path.src.fonts)
         .pipe(dest(path.build.fonts))
         .pipe(browserSync.reload({stream: true}));
 
-    cb();
 }
 
-function clean(cb) {
+function clean(_cb) {
     return del(path.clean);
 
-    cb();
 }
 
 function watchFiles() {
