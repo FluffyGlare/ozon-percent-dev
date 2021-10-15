@@ -1,4 +1,5 @@
-
+import calcDayBonus from "./calcDayBonus";
+import calcTaxDeduction from "./calcTaxDeduction";
 
 export const kvitok = function(){
     const addPercent = document.querySelector('#add');
@@ -20,7 +21,12 @@ export const kvitok = function(){
             const middle = document.querySelector('#out');
             let x = 0;
             let sum = percentArray.map(i=>x+=i, x=0).reverse()[0];
-            middle.textContent =  sum/percentArray.length;
+            let middlePercent = sum/percentArray.length;
+            middle.textContent =  middlePercent;
+
+            const liveBonus = document.querySelector('#outBonus');
+            let outLiveBonus = (calcDayBonus(middlePercent)) *percentArray.length;
+            liveBonus.textContent = calcTaxDeduction(outLiveBonus);
 
     
         }       

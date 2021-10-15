@@ -106,7 +106,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     kvitok();
-
-    
+   
 })
 
